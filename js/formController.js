@@ -1,4 +1,4 @@
-app.controller('formuController', ['$scope', 'servicioConstantes',
+app.controller('formController', ['$scope', 'servicioConstantes',
                                       function($scope, servicioConstantes){
 
 

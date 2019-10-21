@@ -49,30 +49,31 @@
 <div class="row text-center" ng-controller="contratosController">
     <div class="border p-2 mb-2 bg-light">
         Contratos Totales: {{contratos.length}} <br>
-        1: {{filtro1.length}} <br>
-        2: {{contratoConcat.length}}<br>
-        3: {{accionContrato.length}}<br>
-        4: <br>
-        5: <br>
-        6: <br>
+        1: {{ejercicio1.length}} <br>
+        Tipos de contratos: {{tiposContratos.length}}<br>
+        2: {{ejercicio2.length}}<br>
+        3: {{ejercicio3.length}}<br>
+        4: {{ejercicio4.length}}<br>
+        
     </div>
     <div class="border p-2 mb-2 bg-light">
         <p><b>1. Todos los contratos con TIPPPRODUCT</b> con valor KT</p>
-        <ul class="list-group" ng-repeat="kt in filtro1">
+        <ul class="list-group" ng-repeat="kt in ejercicio1">
             <li class="list-group-item">{{kt}}</li>
         </ul>
     </div>
     <div class="border p-2 mb-2 bg-light">
         <p><b>2. campos codCONTRAT y digContrat </b> mas valor del sueldo</p>
-        {{contratoConcat}}
+        {{ejercicio2}}
     </div>
     <div class="border p-2 mb-2 bg-light">
         <p><b>3. campos accion “SITUACION” </b> (filter con subestructura)</p>
-        {{accionContrato}}
+        {{ejercicio3}}
 
     </div>
     <div class="border p-2 mb-2 bg-light">
         <p><b>4. Acciones posibles </b> (map y spread)</p>
+        {{ejercicio4}}
     </div>
     <div class="border p-2 mb-2 bg-light">
         <p><b>5. OTROS </b> </p>

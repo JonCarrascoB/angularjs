@@ -1,0 +1,22 @@
+<h1>Ejercicio de localizacion</h1>
+    <p>Obtenemos los datos de geolocalizacion de un servicio externo, usando datos en <b>JSONP</b></p>
+    <p>Servicio de URL: <a href="{{SERVICE_URL}}">{{SERVICE_URL}}</a></p>
+    <hr>
+            
+    <button class="btn btn-primary" ng-click="localizar()">Localizame</button>
+    <div class="row" ng-hide="mostrar">
+        <div class="col-3 mt-2">
+            <ul class="list-group">
+                <li class="list-group-item">Ip: {{loc.geoplugin_request}}</li>
+                <li class="list-group-item">Ciudad: {{loc.geoplugin_city}}</li>
+                <li class="list-group-item">Region: {{loc.geoplugin_region}}</li>
+                <li class="list-group-item">Latitud: {{loc.geoplugin_latitude}}</li>
+                <li class="list-group-item">Longitud: {{loc.geoplugin_longitude}}</li>
+                <li class="list-group-item">Moneda: {{loc.geoplugin_currencySymbol}}</li>
+            </ul>
+        </div>
+        <div class="col-9">
+            <a target="_blank" href="https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/marker-simple">Documentacion Oficial</a>
+            <div id="map"></div> 
+        </div>
+    </div>

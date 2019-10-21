@@ -1,0 +1,32 @@
+<div ng-repeat="profesor in profesores">
+    <h2>{{profesor.nombre}}</h2>
+    <div class="row mb-3" >
+        <div class="col-3">
+            <img ng-src="{{profesor.img}}" alt="{{profesor.nombre}}" class="rounded-circle">
+        </div>
+        <div class="col-9">
+            <p><strong>Asignatura que imparte:</strong> {{profesor.clase}}</p>
+            <p><strong>Edad:</strong> {{profesor.edad}} años</p>
+            <p><strong>Biografia:</strong> {{profesor.clase}}</p>
+        </div>
+    </div>
+</div>
+<div>
+    <button class="btn btn-primary mb-2" ng-click="editar()">Editar</button>
+    <form>
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" ng-model="editando.nombre" id="nombre">
+        </div>
+        <div class="form-group">
+            <label for="edad">Edad:</label>
+            <input type="text" class="form-control" ng-model="editando.edad" id="edad">
+        </div>
+        <div class="form-group">
+            <label for="bio">Biografia:</label>
+            <textarea class="form-control" ng-model="editando.bio" id="bio"></textarea>
+        </div>
+        <button class="btn btn-danger" ng-click="cancelar()">Eliminar</button>
+        <button class="btn btn-success" ng-click="guardar()">Guardar</button>
+    </form>     
+</div>

@@ -1,0 +1,18 @@
+<h1>{{"Evaluacion 1: Angular JS" | uppercase}}</h1>
+<p>
+    Nombre Completo: 
+    <input type="text" ng-model="nombre" class="form-control" placeholder="Dime tu nombre">
+</p>
+<p>
+    Su lugar de trabajo: 
+    <input type="text" ng-model="lugar" class="form-control" placeholder="Dime tu lugar de trabajo">
+</p>
+<p>
+    Salario: 
+    <input type="text" ng-model="salario" class="form-control" placeholder="Dime tu salario en euros">
+</p>
+<p>
+    Su nombre: {{nombre|uppercase}} <br>
+    Su lugar de trabajo: {{lugar|lowercase}} <br>
+    Su salario es: {{salario|currency}}
+</p>

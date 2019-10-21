@@ -1,0 +1,98 @@
+<h1>Profesor</h1>
+
+        <div ng-controller="profesorCtrl">
+
+            <h4>{{profesor.nombre | uppercase}}</h4>
+            <hr>
+            <div class="row">
+                <!-- Div que contiene la imagen del profesor -->
+                <div class="col-sm-3">
+                    <section class="panel">
+                        <div class="panel-body" align="center">
+                            <img ng-src="{{profesor.foto}}" class="rounded-circle" alt="" width="150px" height="150px">
+                        </div>
+                    </section>
+                </div>
+                <!-- Div, donde se mostrará la bio del profesor -->
+                <div class="col-sm-9">
+                    <section class="panel">
+                        <div class="panel-body">
+                                {{profesor.bio}}
+                            <br>
+                            <br>
+                            <strong>Edad:</strong> {{profesor.edad}} años <br> 
+                        </div>
+                    </section>
+                </div>
+                <button class="btn btn-primary" ng-click="editar()">Editar</button>
+            </div>
+      
+            <div class="row {{animacion}}" ng-show="esVisible">
+                <div class="col-sm">
+                    <section class="panel">
+                         <div class="panel-body">
+                            Nombre:
+                            <input type="text" ng-model="editando.nombre" class="form-control"> <br>
+                            Edad:
+                            <input type="text" ng-model="editando.edad" class="form-control"> <br>
+                            Biografia:
+                            <textarea ng-model="editando.bio" class="form-control" cols="150" rows="5"></textarea>
+                            <br>
+                            <button class="btn btn-danger" ng-click="cancelar()">Cancelar</button>
+                            <button class="btn btn-success" ng-click="guardar()">Guardar</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div> <!-- /end profesorCtrl -->
+
+        <h2>Video</h2>
+        <div ng-controller="videoCtrl as vc">
+            <h4>{{video.id}}. {{video.titulo}}</h4>
+            <hr>
+            <div class="row">
+                
+                <div class="col-sm-9">
+                    <section class="panel">
+                        <div class="panel-body" align="center">
+                            <iframe width="560" height="315" ng-src="https://www.youtube.com/embed/NFkI-zxZlHo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
+                        </div>
+                    </section>
+                </div>
+                
+                <div class="col-sm-3">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <strong>Categoria:</strong> {{video.categoria.nombre}}
+                            <br>
+                            <strong>Creador:</strong> {{video.usuario.nombre}} 
+                            <br>
+                            <p class="btn-like {{animacion}}" ng-click="sumarLikes()">
+                                <strong>Likes:</strong> <i class="far fa-heart fa-3x"></i> {{video.likes}}
+                            </p>  
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+        </div> <!-- /end videoCtrl-->
+        <hr>
+        <h2>Ejemplo directiva <b>ng-repeat</b></h2>
+        <div class="row" ng-controller="frutas2Ctrl">
+                Fruta Seleccionada: {{frutaSeleccionada}}
+                <ul class="list-group">
+                    <li class="{{ (frutaSeleccionada == f) ? 'list-group-item active' : 'list-group-item' }}"                
+                        ng-click="seleccionado(f)" 
+                        ng-repeat="f in frutas">{{f}}</li>         
+                </ul>  
+                
+                {{ frutasJson }}
+        
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="fj in frutasJson.frutas">
+                        {{fj.nombre}} - {{ fj.color}}
+                    </li>         
+                </ul>  
+        
+
+        </div> <!-- /end ng-repeat-->
